@@ -17,7 +17,7 @@ export default class DistrictRepository {
 			let cleanVal = Math.round(dataVal * 1000) / 1000
 
 			if (!cleanObj[loc]) {
-				cleanObj[loc] = { location: loc.toUpperCase(), data: {} }
+				cleanObj[loc] = { location: loc, data: {} }
 			}
 
 			cleanObj[loc]['data'][dataObj.TimeFrame] = cleanVal
@@ -33,4 +33,34 @@ export default class DistrictRepository {
 		}
 	}
 
+	findAllMatches(string) {
+		let y = []
+
+		if (string) {
+			let x = Object.keys(this.data).filter(key => {
+				if (key.includes(string.toUpperCase())) {
+					return key
+				}
+			})
+			y = x.reduce((accum, foundKey) => {
+					accum.push(this.data[foundKey])
+				return accum
+			}, [])
+		} else {
+			y = Object.keys(this.data).map(key => {
+				return this.data[key]
+			})
+		}
+		
+		console.log(y)
+		return y
+	}
+
 }
+
+
+
+
+
+
+
