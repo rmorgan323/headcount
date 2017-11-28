@@ -1,46 +1,36 @@
 
 export default class DistrictRepository {
 	constructor(rawData) {
-
+		
 		this.data = {}
-		this.cleanData = this.cleanData(rawData)
+		this.cleanData(rawData)
 		// console.log(this.data)
 	}
 
 	cleanData(rawData) {
 		this.data = rawData.reduce((cleanObj, dataObj) => {
-			let loc = dataObj.Location
+			let loc = dataObj.Location.toUpperCase();
+			let dataVal = dataObj.Data;
+			if (dataVal === 'N/A') {
+				dataVal = 0
+			}
+			let cleanVal = Math.round(dataVal * 1000) / 1000
 
 			if (!cleanObj[loc]) {
-				cleanObj[loc] = {}
+				cleanObj[loc] = { location: loc.toUpperCase(), data: {} }
 			}
 
-			cleanObj[loc][dataObj.TimeFrame] = dataObj.Data
+			cleanObj[loc]['data'][dataObj.TimeFrame] = cleanVal
 
 			return cleanObj
 		}, {})
 	}
 
-
 	findByName(string) {
-		const keys = Object.keys(this.data)
-
-		if(string) {
-			const potatoes = keys.reduce((accu, key) => {
-				if(key === string) {
-					accu = {[key]: this.data[key]}
-				}
-				return accu;
-			}, {})
-
-
-			return potatoes;
+		if (string) {
+			let x = this.data[string.toUpperCase()]
+			return x;
 		}
 	}
 
-
-
-	findAllMatching() {
-
-	}
 }
