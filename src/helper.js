@@ -1,12 +1,10 @@
 
-
-
 export default class DistrictRepository {
 	constructor(rawData) {
-		
-		this.data = []
+
+		this.data = {}
 		this.cleanData = this.cleanData(rawData)
-		console.log(this.data)
+		// console.log(this.data)
 	}
 
 	cleanData(rawData) {
@@ -21,6 +19,28 @@ export default class DistrictRepository {
 
 			return cleanObj
 		}, {})
+	}
+
+
+	findByName(string) {
+		const keys = Object.keys(this.data)
+
+		if(string) {
+			const potatoes = keys.reduce((accu, key) => {
+				if(key === string) {
+					accu = {[key]: this.data[key]}
+				}
+				return accu;
+			}, {})
+
+
+			return potatoes;
+		}
+	}
+
+
+
+	findAllMatching() {
 
 	}
 }
