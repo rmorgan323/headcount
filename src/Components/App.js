@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import css from '../css/App.css';
+import '../css/App.css';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 import DistrictRepository from '../helper';
 import CardContainer from './CardContainer';
@@ -11,21 +11,20 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			data: new DistrictRepository(kinderData)
+			data: new DistrictRepository(kinderData).findAllMatches()
 		}
 	}
 
-	// componentDidMount() {
-	// 	const dataArray = findAllMatches();
-	// 	this.setState({data: dataArray})
-	// 	console.log(this.state);
-	// }
+	searchCards = (string) => {
+		const results = new DistrictRepository(kinderData).findAllMatches(string)
+		this.setState({data: results})
+	}
 
   render() {
     return (
       <div>
-				<Search />
-				<CardContainer allData={this.state.data}
+				<Search search={this.searchCards} />
+				<CardContainer currentData={this.state.data}
 				/>
 			</div>
     );

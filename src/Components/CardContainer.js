@@ -12,7 +12,7 @@ export default class CardContainer extends Component {
   render() {
     return (
       <div>
-      {(this.props.allData.findAllMatches().map((card, index)=> {
+      {(this.props.currentData.map((card, index)=> {
         return <Card location={card.location}
                          data={card.data}
                           key={index}

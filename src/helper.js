@@ -1,10 +1,8 @@
 
 export default class DistrictRepository {
 	constructor(rawData) {
-		
 		this.data = {}
 		this.cleanData(rawData)
-		// console.log(this.data)
 	}
 
 	cleanData(rawData) {
@@ -52,7 +50,6 @@ export default class DistrictRepository {
 			})
 		}
 		
-		console.log(y)
 		return y
 	}
 
