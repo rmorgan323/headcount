@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../css/Search.css';
 
 export default class Search extends Component {
   constructor() {
@@ -14,7 +14,7 @@ export default class Search extends Component {
   render() {
     return(
       <div>
-        <input placeholder="Search" 
+        <input placeholder="search" 
                onChange={this.searchInput}
         />
       </div>

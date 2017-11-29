@@ -1,8 +1,21 @@
 .card-container-component {
   display: flex;
-  flex-wrap: wrap; }
-  .card-container-component h2 {
-    margin: 0;
-    font-size: 18px; }
-  .card-container-component p {
-    margin: 0; }
+  flex-wrap: wrap;
+  width: 1365px;
+  margin: auto; }
+
+@media screen and (max-width: 1364px) {
+  .card-container-component {
+    width: 1092px; } }
+
+@media screen and (max-width: 1091px) {
+  .card-container-component {
+    width: 819px; } }
+
+@media screen and (max-width: 818px) {
+  .card-container-component {
+    width: 546px; } }
+
+@media screen and (max-width: 545px) {
+  .card-container-component {
+    width: 273px; } }
