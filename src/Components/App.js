@@ -4,15 +4,24 @@ import kinderData from '../../data/kindergartners_in_full_day_program.js';
 import DistrictRepository from '../helper';
 import CardContainer from './CardContainer';
 import Search from './Search';
-import { findAllMatches } from '../helper';
+import { findAllMatches, findByName } from '../helper';
+import ComparisonCardContainer from './ComparisonCardContainer'
 
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			data: new DistrictRepository(kinderData).findAllMatches()
+			data: new DistrictRepository(kinderData).findAllMatches(),
+			comparisonCards: [],
+			comparisonActive: false
 		}
+	}
+
+	addComparisonCard = (card) => {
+		let currentComparison = this.state.comparisonCards
+		let newComparison = new DistrictRepository(kinderData).findByName(card)
+		this.setState({comparisonCards: [...currentComparison, newComparison]})
 	}
 
 	searchCards = (string) => {
@@ -20,12 +29,21 @@ class App extends Component {
 		this.setState({data: results})
 	}
 
+	clearComparisons() {
+		this.setState({comparisonCards: [], comparisonActive: false})
+	}
+
   render() {
     return (
       <div>
 				<Search search={this.searchCards} />
+				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
+																comparisonActive={this.state.comparisonActive}
+
+																	/>
 				<CardContainer currentData={this.state.data}
-				/>
+								 addComparisonCard={this.addComparisonCard}
+									/>
 			</div>
     );
   }

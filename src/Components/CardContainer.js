@@ -18,6 +18,7 @@ export default class CardContainer extends Component {
                          data={card.data}
                           key={index}
                            id={index}
+            addComparisonCard={this.props.addComparisonCard}
         />
       }))}
       </div>

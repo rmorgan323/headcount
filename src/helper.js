@@ -24,11 +24,8 @@ export default class DistrictRepository {
 		}, {})
 	}
 
-	findByName(string) {
-		if (string) {
-			let x = this.data[string.toUpperCase()]
-			return x;
-		}
+	findByName(string = '') {
+			return this.data[string.toUpperCase()]
 	}
 
 	findAllMatches(string) {
@@ -49,15 +46,28 @@ export default class DistrictRepository {
 				return this.data[key]
 			})
 		}
-		
 		return y
 	}
 
+
+	findAverage(location) {
+		let locationObj = this.findByName(location);
+		let data = Object.keys(locationObj.data)
+
+		let average = data.reduce((accu, year) => {
+				accu += locationObj.data[year]
+			return accu;
+		}, 0);
+		return Math.round((average / data.length) * 1000) / 1000
+	}
+
+
+	compareDistrictAverages(locOne, locTwo) {
+		let location1 = this.findAverage(locOne);
+		let location2 = this.findAverage(locTwo);
+		let result = Math.round((location1 / location2) * 1000) / 1000
+
+		return  { [locOne.toUpperCase()]: location1, [locTwo.toUpperCase()]: location2, compared: result }
+
+	}
 }
-
-
-
-
-
-
-
