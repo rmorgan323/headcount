@@ -1,0 +1,8 @@
+.card-container-component {
+  display: flex;
+  flex-wrap: wrap; }
+  .card-container-component h2 {
+    margin: 0;
+    font-size: 18px; }
+  .card-container-component p {
+    margin: 0; }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Card from './Card.js';
+import '../css/CardContainer.css';
 
 
 export default class CardContainer extends Component {
@@ -11,7 +12,7 @@ export default class CardContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card-container-component">
       {(this.props.currentData.map((card, index)=> {
         return <Card location={card.location}
                          data={card.data}
@@ -19,8 +20,6 @@ export default class CardContainer extends Component {
                            id={index}
         />
       }))}
-
-        <h1>this is the card container</h1>
       </div>
     )
   }
