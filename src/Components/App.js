@@ -7,7 +7,6 @@ import Search from './Search';
 import { findAllMatches, findByName } from '../helper';
 import ComparisonCardContainer from './ComparisonCardContainer'
 
-
 class App extends Component {
 	constructor() {
 		super();
@@ -18,10 +17,31 @@ class App extends Component {
 		}
 	}
 
-	addComparisonCard = (card) => {
-		let currentComparison = this.state.comparisonCards
-		let newComparison = new DistrictRepository(kinderData).findByName(card)
-		this.setState({comparisonCards: [...currentComparison, newComparison]})
+	updateCardToCompare = (card) => {
+		const currentComparison = this.state.comparisonCards
+		const newComparison = new DistrictRepository(kinderData).findByName(card)
+		let foundCard = this.state.comparisonCards.find(card => {
+			return card.location === newComparison.location
+		})
+
+		if (foundCard === undefined) {
+			foundCard = {location: ''}
+		}
+
+		if (foundCard.location === newComparison.location) {
+			const cardToKeep = this.state.comparisonCards.filter(card => {
+				return card.location !== newComparison.location
+			})
+			this.setState({comparisonCards: cardToKeep})
+			document.querySelector('.error-message').innerText = '';
+
+		} else {
+			if (this.state.comparisonCards.length === 2) {
+				document.querySelector('.error-message').innerText = 'You idiot';
+			} else {
+				this.setState({comparisonCards: [...currentComparison, newComparison]})
+			}
+		}		
 	}
 
 	searchCards = (string) => {
@@ -39,10 +59,11 @@ class App extends Component {
 				<Search search={this.searchCards} />
 				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
 																comparisonActive={this.state.comparisonActive}
-
+														 updateCardToCompare={this.updateCardToCompare}
 																	/>
+				<h1 className="error-message"></h1>
 				<CardContainer currentData={this.state.data}
-								 addComparisonCard={this.addComparisonCard}
+							 updateCardToCompare={this.updateCardToCompare}
 									/>
 			</div>
     );
