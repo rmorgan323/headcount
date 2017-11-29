@@ -41,7 +41,7 @@ class App extends Component {
 			} else {
 				this.setState({comparisonCards: [...currentComparison, newComparison]})
 			}
-		}		
+		}
 	}
 
 	searchCards = (string) => {
@@ -49,8 +49,9 @@ class App extends Component {
 		this.setState({data: results})
 	}
 
-	clearComparisons() {
-		this.setState({comparisonCards: [], comparisonActive: false})
+	clearComparisons = () => {
+
+		this.setState({comparisonCards: []})
 	}
 
   render() {
@@ -60,6 +61,7 @@ class App extends Component {
 				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
 																comparisonActive={this.state.comparisonActive}
 														 updateCardToCompare={this.updateCardToCompare}
+														 clearComparisons={this.clearComparisons}
 																	/>
 				<h1 className="error-message"></h1>
 				<CardContainer currentData={this.state.data}

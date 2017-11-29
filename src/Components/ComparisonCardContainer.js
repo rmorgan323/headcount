@@ -4,9 +4,9 @@ import Card from './Card.js';
 
 	// {console.log(comparisonCards)}
 	// {console.log(comparisonActive)}
-const ComparisonCardContainer = ({ comparisonCards, comparisonActive, updateCardToCompare }) => {
+const ComparisonCardContainer = ({ comparisonCards, comparisonActive, updateCardToCompare, clearComparisons }) => {
 
- 
+
     return (
     	  <div className="comparison-card-container-component">
       {(comparisonCards.map((card, index)=> {
@@ -17,9 +17,12 @@ const ComparisonCardContainer = ({ comparisonCards, comparisonActive, updateCard
           updateCardToCompare={updateCardToCompare}
         />
       }))}
+      <button onClick={ clearComparisons }
+            className="clear-button">Clear
+      </button>
       </div>
     )
-  
+
 }
 
 
