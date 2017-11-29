@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Card.css';
 
 
-const Card = ({ location, data, id }) => {
+const Card = ({ location, data, id, addComparisonCard }) => {
   let yearArray = Object.keys(data);
   let mappedYearArray = yearArray.map((year, index)=> {
   return  <p key={`${id}-${index}`}>
@@ -11,7 +11,9 @@ const Card = ({ location, data, id }) => {
   })
 
   return (
-    <div className="card-component">
+    <div onClick={() => addComparisonCard(location)}
+       className="card-component">
+
       <h2>{location}</h2>
       <hr />
       <div className="card-info-block">
