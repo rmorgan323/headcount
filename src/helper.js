@@ -9,7 +9,7 @@ export default class DistrictRepository {
 		this.data = rawData.reduce((cleanObj, dataObj) => {
 			let loc = dataObj.Location.toUpperCase();
 			let dataVal = dataObj.Data;
-			if (dataVal === 'N/A') {
+			if (dataVal === 'N/A' || dataVal === '#DIV/0!') {
 				dataVal = 0
 			}
 			let cleanVal = Math.round(dataVal * 1000) / 1000
