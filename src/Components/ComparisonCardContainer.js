@@ -16,6 +16,12 @@ class ComparisonCardContainer extends React.Component {
 		}
 	}
 
+	// shouldComponentUpdate(nextProps, nextState) {
+	// 	console.log(nextProps.comparisonCards !== this.props.comparisonCards)
+		
+	// 	return nextProps.comparisonCards !== this.props.comparisonCards
+	// }
+
 	render() {
     return (
     	  <div className="comparison-card-container-component">
@@ -35,11 +41,5 @@ class ComparisonCardContainer extends React.Component {
     )
   }
 }
-
-
-
-
-
-
 
 export default ComparisonCardContainer;

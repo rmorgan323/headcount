@@ -41,10 +41,8 @@ class App extends Component {
 			} else {
 				this.setState({comparisonCards: [...currentComparison, newComparison]})
 			}
-		}
-		
+		}		
 	}
-
 
 	searchCards = (string) => {
 		const results = new DistrictRepository(kinderData).findAllMatches(string)
@@ -52,17 +50,11 @@ class App extends Component {
 	}
 
 	clearComparisons = () => {
-		this.setState({comparisonCards: []})
+		this.setState({comparisonCards: [], comparison: null})
 	}
 
-
-
 	populateComparisonCard = (loc1, loc2) => {
-		// const loc1 = this.state.comparisonCards[0].location;
-		// const loc2 = this.state.comparisonCards[1].location;
-		console.log(loc1, loc2)
 		const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
-	
 		this.setState({comparison: comparison})
 	}
 
