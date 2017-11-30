@@ -36,6 +36,7 @@ class App extends Component {
 			document.querySelector('.error-message').innerText = '';
 
 		} else {
+
 			this.manageComparisonLength(card, currentComparison, newComparison)
 		}
 	}
@@ -54,7 +55,7 @@ class App extends Component {
 	}
 
 	clearComparisons = () => {
-		this.setState({comparisonCards: []})
+		this.setState({comparisonCards: [], comparison: null})
 	}
 
 	populateComparisonCard = (loc1, loc2) => {
