@@ -22,3 +22,6 @@ hr {
   border: 2px solid black;
   opacity: .06;
   width: 90%; }
+
+.change-green {
+  color: green; }
