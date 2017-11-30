@@ -27,21 +27,26 @@ class App extends Component {
 		if (foundCard === undefined) {
 			foundCard = {location: ''}
 		}
-
+		
 		if (foundCard.location === newComparison.location) {
-			const cardToKeep = this.state.comparisonCards.filter(card => {
+			const addCard = this.state.comparisonCards.filter(card => {
 				return card.location !== newComparison.location
 			})
-			this.setState({comparisonCards: cardToKeep})
+			this.setState({comparisonCards: addCard})
 			document.querySelector('.error-message').innerText = '';
 
 		} else {
-				if (this.state.comparisonCards.length === 2) {
-					document.querySelector('.error-message').innerText = 'You idiot';
-			} else {
-				this.setState({comparisonCards: [...currentComparison, newComparison]})
-			}
-		}		
+
+			this.manageComparisonLength(card, currentComparison, newComparison)
+		}
+	}
+
+	manageComparisonLength(card, currentComparison, newComparison) {
+		if (this.state.comparisonCards.length === 2) {
+			document.querySelector('.error-message').innerText = 'You idiot';
+		} else {
+			this.setState({comparisonCards: [...currentComparison, newComparison]})
+		}
 	}
 
 	searchCards = (string) => {
@@ -55,6 +60,7 @@ class App extends Component {
 
 	populateComparisonCard = (loc1, loc2) => {
 		const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
+
 		this.setState({comparison: comparison})
 	}
 
@@ -62,26 +68,25 @@ class App extends Component {
 		this.setState({comparison: null})
 	}
 
-
-  render() {
-    return (
-      <div>
+	render() {
+		return (
+			<div>
 				<Search search={this.searchCards} />
 				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
-																			comparison={this.state.comparison}
-													populateComparisonCard={this.populateComparisonCard}
-														 updateCardToCompare={this.updateCardToCompare}
-														    clearComparisons={this.clearComparisons}
-														     resetComparison={this.resetComparison}
-																	/>
-														    }
-				<h1 className="error-message"></h1>
-				<CardContainer currentData={this.state.data}
-							 updateCardToCompare={this.updateCardToCompare}
-									/>
-			</div>
-    );
-  }
+					comparison={this.state.comparison}
+					populateComparisonCard={this.populateComparisonCard}
+					updateCardToCompare={this.updateCardToCompare}
+					clearComparisons={this.clearComparisons}
+					resetComparison={this.resetComparison}
+				/>
+			}
+			<h1 className="error-message"></h1>
+			<CardContainer currentData={this.state.data}
+				updateCardToCompare={this.updateCardToCompare}
+			/>
+		</div>
+	);
+}
 }
 
 export default App;

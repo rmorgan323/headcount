@@ -68,7 +68,6 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-
     "setupTestFrameworkScriptFile": "./src/setupTests.js",
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
