@@ -13,7 +13,7 @@ class App extends Component {
 		this.state = {
 			data: new DistrictRepository(kinderData).findAllMatches(),
 			comparisonCards: [],
-			comparison: {}
+			comparison: null
 		}
 	}
 
@@ -42,10 +42,7 @@ class App extends Component {
 				this.setState({comparisonCards: [...currentComparison, newComparison]})
 			}
 		}
-		//
-		// if(this.state.comparisonCards.length === 2) {
-		// this.populateComparisonCard()
-		// }
+		
 	}
 
 
@@ -58,13 +55,20 @@ class App extends Component {
 		this.setState({comparisonCards: []})
 	}
 
-	// populateComparisonCard() {
-	// 	const loc1 = this.state.comparisonCards[0];
-	// 	const loc2 = this.state.comparisonCards[1];
-	// 	const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
-	//
-	// 	this.setState({comparison: comparison})
-	// }
+
+
+	populateComparisonCard = (loc1, loc2) => {
+		// const loc1 = this.state.comparisonCards[0].location;
+		// const loc2 = this.state.comparisonCards[1].location;
+		console.log(loc1, loc2)
+		const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
+	
+		this.setState({comparison: comparison})
+	}
+
+	resetComparison = () => {
+		this.setState({comparison: null})
+	}
 
 
   render() {
@@ -72,10 +76,13 @@ class App extends Component {
       <div>
 				<Search search={this.searchCards} />
 				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
-																comparisonActive={this.state.comparisonActive}
+																			comparison={this.state.comparison}
+													populateComparisonCard={this.populateComparisonCard}
 														 updateCardToCompare={this.updateCardToCompare}
-														 clearComparisons={this.clearComparisons}
+														    clearComparisons={this.clearComparisons}
+														     resetComparison={this.resetComparison}
 																	/>
+														    }
 				<h1 className="error-message"></h1>
 				<CardContainer currentData={this.state.data}
 							 updateCardToCompare={this.updateCardToCompare}
