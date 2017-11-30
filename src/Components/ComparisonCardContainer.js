@@ -2,6 +2,7 @@ import React from 'react';
 import ComparisonCard from './ComparisonCard';
 import Card from './Card.js';
 
+
 	// {console.log(comparisonCards)}
 	// {console.log(comparisonActive)}
 const ComparisonCardContainer = ({ comparisonCards, comparisonActive, updateCardToCompare, clearComparisons }) => {
@@ -17,6 +18,7 @@ const ComparisonCardContainer = ({ comparisonCards, comparisonActive, updateCard
           updateCardToCompare={updateCardToCompare}
         />
       }))}
+      <ComparisonCard />
       <button onClick={ clearComparisons }
             className="clear-button">Clear
       </button>

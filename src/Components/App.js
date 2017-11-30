@@ -13,7 +13,7 @@ class App extends Component {
 		this.state = {
 			data: new DistrictRepository(kinderData).findAllMatches(),
 			comparisonCards: [],
-			comparisonActive: false
+			comparison: {}
 		}
 	}
 
@@ -36,13 +36,18 @@ class App extends Component {
 			document.querySelector('.error-message').innerText = '';
 
 		} else {
-			if (this.state.comparisonCards.length === 2) {
-				document.querySelector('.error-message').innerText = 'You idiot';
+				if (this.state.comparisonCards.length === 2) {
+					document.querySelector('.error-message').innerText = 'You idiot';
 			} else {
 				this.setState({comparisonCards: [...currentComparison, newComparison]})
 			}
 		}
+		//
+		// if(this.state.comparisonCards.length === 2) {
+		// this.populateComparisonCard()
+		// }
 	}
+
 
 	searchCards = (string) => {
 		const results = new DistrictRepository(kinderData).findAllMatches(string)
@@ -50,9 +55,17 @@ class App extends Component {
 	}
 
 	clearComparisons = () => {
-
 		this.setState({comparisonCards: []})
 	}
+
+	// populateComparisonCard() {
+	// 	const loc1 = this.state.comparisonCards[0];
+	// 	const loc2 = this.state.comparisonCards[1];
+	// 	const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
+	//
+	// 	this.setState({comparison: comparison})
+	// }
+
 
   render() {
     return (
