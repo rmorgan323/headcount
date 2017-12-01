@@ -20,9 +20,12 @@ ShallowWrapper {
           search={[Function]} />,
         <ComparisonCardContainer
           clearComparisons={[Function]}
-          comparisonActive={undefined}
+          comparison={null}
           comparisonCards={Array []}
+          populateComparisonCard={[Function]}
+          resetComparison={[Function]}
           updateCardToCompare={[Function]} />,
+        "}",
         <h1
           className="error-message" />,
         <CardContainer
@@ -2945,17 +2948,20 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "clearComparisons": [Function],
-          "comparisonActive": undefined,
+          "comparison": null,
           "comparisonCards": Array [],
+          "populateComparisonCard": [Function],
+          "resetComparison": [Function],
           "updateCardToCompare": [Function],
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
+      "}",
       Object {
         "instance": null,
         "key": undefined,
@@ -5890,9 +5896,12 @@ ShallowWrapper {
             search={[Function]} />,
           <ComparisonCardContainer
             clearComparisons={[Function]}
-            comparisonActive={undefined}
+            comparison={null}
             comparisonCards={Array []}
+            populateComparisonCard={[Function]}
+            resetComparison={[Function]}
             updateCardToCompare={[Function]} />,
+          "}",
           <h1
             className="error-message" />,
           <CardContainer
@@ -8815,17 +8824,20 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "clearComparisons": [Function],
-            "comparisonActive": undefined,
+            "comparison": null,
             "comparisonCards": Array [],
+            "populateComparisonCard": [Function],
+            "resetComparison": [Function],
             "updateCardToCompare": [Function],
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
+        "}",
         Object {
           "instance": null,
           "key": undefined,

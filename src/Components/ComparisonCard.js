@@ -2,8 +2,6 @@ import React from 'react';
 
 const ComparisonCard = ({ loc1, avg1, loc2, avg2, compare }) => {
 
-console.log(loc1)
-
 	return (
 	  <div>
 	    <h3>{loc1}</h3>
