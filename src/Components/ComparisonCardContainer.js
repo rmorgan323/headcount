@@ -16,6 +16,7 @@ class ComparisonCardContainer extends React.Component {
 		}
 	}
 
+
 	// shouldComponentUpdate(nextProps, nextState) {
 	// 	console.log(nextProps.comparisonCards !== this.props.comparisonCards)
 		
@@ -23,22 +24,51 @@ class ComparisonCardContainer extends React.Component {
 	// }
 
 	render() {
-    return (
-    	  <div className="comparison-card-container-component">
-      {(this.props.comparisonCards.map((card, index) => {
-        return <Card location={card.location}
-                         data={card.data}
-                          key={index}
-                           id={index}
-          updateCardToCompare={this.props.updateCardToCompare}
-        />
-      }))}
-      <ComparisonCard />
-      <button onClick={ this.props.clearComparisons }
-            className="clear-button">Clear
-      </button>
-      </div>
-    )
+		if (this.props.comparison === null) {
+	    return (
+	    	<div className="comparison-card-container-component">
+		      {(this.props.comparisonCards.map((card, index) => {
+		        return <Card location={card.location}
+		                         data={card.data}
+		                          key={index}
+		                           id={index}
+		          updateCardToCompare={this.props.updateCardToCompare}
+		        />
+		      }))}
+
+		      <button onClick={ this.props.clearComparisons }
+		            className="clear-button">Clear
+		      </button>
+	      </div>
+	    )
+		} else {
+			return (
+	    	<div className="comparison-card-container-component">
+		      {(this.props.comparisonCards.map((card, index) => {
+		        return <Card location={card.location}
+		                         data={card.data}
+		                          key={index}
+		                           id={index}
+		          updateCardToCompare={this.props.updateCardToCompare}
+		        />
+		      }))}
+
+		      <ComparisonCard loc1={this.props.comparison.loc1}
+		      								avg1={this.props.comparison.avg1}
+		      								loc2={this.props.comparison.loc2}
+		      								avg2={this.props.comparison.avg2}
+		      								compare={this.props.comparison.compare}
+		      />
+
+		      <button onClick={ this.props.clearComparisons }
+		            className="clear-button">Clear
+		      </button>
+	      </div>
+	    )
+
+
+
+		}
   }
 }
 
