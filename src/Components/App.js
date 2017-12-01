@@ -33,7 +33,7 @@ class App extends Component {
 				return card.location !== newComparison.location
 			})
 			this.setState({comparisonCards: addCard})
-			document.querySelector('.error-message').innerText = '';
+			this.toggleErrorMessage('off')
 
 		} else {
 
@@ -41,9 +41,19 @@ class App extends Component {
 		}
 	}
 
+	toggleErrorMessage(onOff) {
+		let errMes;
+		if (onOff === 'on') {
+			errMes = 'Please clear comparisons first!'
+		} else {
+			errMes = ''
+		}
+		document.querySelector('.error-message').innerText = errMes;
+	}
+
 	manageComparisonLength(card, currentComparison, newComparison) {
 		if (this.state.comparisonCards.length === 2) {
-			document.querySelector('.error-message').innerText = 'You idiot';
+			this.toggleErrorMessage('on')
 		} else {
 			this.setState({comparisonCards: [...currentComparison, newComparison]})
 		}
@@ -56,11 +66,13 @@ class App extends Component {
 
 	clearComparisons = () => {
 		this.setState({comparisonCards: [], comparison: null})
+		document.querySelector('input').value = ''
+		this.searchCards('')
+		this.toggleErrorMessage('off')
 	}
 
 	populateComparisonCard = (loc1, loc2) => {
 		const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
-
 		this.setState({comparison: comparison})
 	}
 
@@ -70,7 +82,7 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="app-component">
 				<Search search={this.searchCards} />
 				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
 					comparison={this.state.comparison}
@@ -79,7 +91,7 @@ class App extends Component {
 					clearComparisons={this.clearComparisons}
 					resetComparison={this.resetComparison}
 				/>
-			<h1 className="error-message"></h1>
+			<h4 className="error-message"></h4>
 			<CardContainer currentData={this.state.data}
 				updateCardToCompare={this.updateCardToCompare}
 			/>
