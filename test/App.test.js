@@ -42,7 +42,7 @@ describe('App tests', () => {
 
   it('App should have a default state for comparison', () => {
 
-    expect(renderedApp.state('comparison')).toEqual({})
+    expect(renderedApp.state('comparison')).toEqual(null)
   })
 
   it('App should have a default state for the kinder data', () => {
@@ -51,5 +51,25 @@ describe('App tests', () => {
     expect(renderedApp.state('data')).toEqual(newData)
   })
 
+  it.skip('should have a title', () => {
 
+  })
+
+  it.skip('should have instructions', () => {
+
+  })
+
+  it('should display number of cards according to search results', () => {
+    let mountedApp = mount(<App/>)
+    let input = mountedApp.find('input');
+
+    input.simulate('change', {target: {value: 'br'} });
+    expect(mountedApp.state('data').length).toEqual(4)
+  })
+
+  it('App state should change if cards are selected to be compared', () => {
+    
+
+
+  })
 })

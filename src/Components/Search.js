@@ -13,9 +13,10 @@ export default class Search extends Component {
 
   render() {
     return(
-      <div>
-        <input placeholder="search" 
+      <div className='search-container'>
+        <input placeholder="search"
                onChange={this.searchInput}
+               value=''
         />
       </div>
     )

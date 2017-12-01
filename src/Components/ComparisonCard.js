@@ -3,8 +3,6 @@ import '../css/ComparisonCard.css';
 
 const ComparisonCard = ({ loc1, avg1, loc2, avg2, compare }) => {
 
-console.log(loc1)
-
 	return (
 	  <div className="comparison-center">
 	  	<img className="arrow-left" src="assets/arrow-left.svg" />
