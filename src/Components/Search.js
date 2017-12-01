@@ -16,7 +16,6 @@ export default class Search extends Component {
       <div className='search-container'>
         <input placeholder="search"
                onChange={this.searchInput}
-               value=''
         />
       </div>
     )

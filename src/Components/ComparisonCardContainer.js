@@ -17,13 +17,6 @@ class ComparisonCardContainer extends React.Component {
 		}
 	}
 
-
-	// shouldComponentUpdate(nextProps, nextState) {
-	// 	console.log(nextProps.comparisonCards !== this.props.comparisonCards)
-		
-	// 	return nextProps.comparisonCards !== this.props.comparisonCards
-	// }
-
 	render() {
 		if (this.props.comparison === null) {
 	    return (
