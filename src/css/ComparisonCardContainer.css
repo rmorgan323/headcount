@@ -1,0 +1,31 @@
+.comparison-card-container-component {
+  height: 332px;
+  width: 819px;
+  margin: auto;
+  display: block;
+  position: relative; }
+
+.comparison-top {
+  display: flex;
+  justify-content: space-between; }
+
+.clear-button {
+  width: 154px;
+  margin: auto;
+  display: block;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Magallanes', sans-serif;
+  padding: 0px;
+  background-color: #f9a94a;
+  color: white;
+  cursor: pointer;
+  bottom: 6px;
+  left: calc(50% - 77px);
+  position: absolute; }
+
+.clear-button:hover {
+  background-color: #f7941d; }

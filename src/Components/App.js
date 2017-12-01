@@ -79,7 +79,6 @@ class App extends Component {
 					clearComparisons={this.clearComparisons}
 					resetComparison={this.resetComparison}
 				/>
-			}
 			<h1 className="error-message"></h1>
 			<CardContainer currentData={this.state.data}
 				updateCardToCompare={this.updateCardToCompare}
