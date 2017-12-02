@@ -2,8 +2,8 @@ html {
   /*background-image: url('../../public/assets/school-bg.jpg');*/ }
 
 body {
-  /*background: linear-gradient(to right, rgba(206,255,250,0.97) 0%,rgba(239,251,255,1) 50%,rgba(206,255,250,0.97) 100%);*/
-  background: linear-gradient(to right, rgba(188, 208, 242, 0.35) 0%, #bcd0f2 50%, rgba(188, 208, 242, 0.35) 100%);
+  /*background: linear-gradient(to right, rgba(82,191,255,1) 0%,rgba(44,137,191,1) 50%,rgba(82,191,255,1) 100%);*/
+  background: linear-gradient(to right, rgba(82, 191, 255, 0.1) 0%, rgba(82, 191, 255, 0.7) 50%, rgba(82, 191, 255, 0.1) 100%);
   padding-bottom: 30px; }
 
 h1, h2, input {
@@ -11,7 +11,8 @@ h1, h2, input {
   font-weight: bold;
   text-align: center;
   margin: 0;
-  opacity: .8; }
+  opacity: .8;
+  color: #2c89bf; }
 
 input {
   opacity: 1; }
@@ -22,7 +23,7 @@ h3, h4, h5, h6, p {
   opacity: .8; }
 
 p {
-  color: #db7d0d; }
+  color: #a61608; }
 
 h2 {
   font-size: 20px;
@@ -31,4 +32,5 @@ h2 {
 
 .app-component h4 {
   text-align: center;
-  height: 20px; }
+  height: 20px;
+  color: #a61608; }

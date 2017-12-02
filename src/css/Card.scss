@@ -11,7 +11,7 @@
 }
 
 .card-component:hover {
-	background-color: #eff2fa;
+	background-color: rgba(255,255,255,.7);
 }
 
 .card-info-block {
@@ -25,21 +25,21 @@
 }
 
 hr {
-	border: 2px solid black;
-	opacity: .06;
+	border: 2px solid #2c89bf;
+	opacity: .16;
 	width: 90%;
 }
 
 .change-green {
-	color: #0d0262;
+	color: #0e5d8c;
   opacity: .7;
 }
 
 .highlighted {
-	background-color: #f9ead9;
+	background-color: rgba(255,255,255,.7);
 }
 
 .highlighted:hover {
-	background-color: #f6ddc1;
+	background-color: rgba(255,255,255,.55);
 }
 
