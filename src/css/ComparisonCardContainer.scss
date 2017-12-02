@@ -4,6 +4,14 @@
 	margin: auto;
 	display: block;
 	position: relative;
+
+	.instructions {
+		font-size: 20px;
+		text-align: center;
+		color: #0e5d8c;;
+		font-family: 'Magallanes', sans-serif; 
+  	font-weight: bold;
+	}
 }
 
 .comparison-top {
@@ -22,8 +30,8 @@
   font-weight: 700;
   font-family: 'Magallanes', sans-serif;
   padding: 0px;
-  background-color: #f9a94a;
-  color: white;
+  background-color: #2c89bf;
+  color: #fff;
   cursor: pointer;
   bottom: 6px;
   left: calc(50% - 77px);
@@ -31,5 +39,5 @@
 }
 
 .clear-button:hover {
-	background-color: #f7941d;
+	background-color: #1c6d9c;
 }

@@ -37,8 +37,7 @@ class ComparisonCardContainer extends React.Component {
 		            className="clear-button">clear
 		      </button>
 					<div className="comparison-center">
-					<h1>HeadCount</h1>
-					<p className="instructions">Please select two districts to compare them</p>
+					<p className="instructions">select TWO districts<br />&larr; to compare &rarr;</p>
 				</div>
 	      </div>
 	    )

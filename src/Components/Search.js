@@ -14,6 +14,7 @@ export default class Search extends Component {
   render() {
     return(
       <div className='search-container'>
+        <img src="assets/headcount-logo.svg" />
         <input placeholder="search"
                onChange={this.searchInput}
         />

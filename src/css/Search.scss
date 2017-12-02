@@ -6,10 +6,24 @@ input {
   margin: 20px auto;
   border: none;
   font-size: 20px;
-  box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.3)
+  color: #2c89bf;
 }
 
 ::placeholder {
+  color: #2c89bf;
 	text-align: center;
 	opacity: .6;
+}
+
+.search-container {
+  background-color: rgba(255,255,255,.3);
+  padding: 1px;
+  margin: 0px 0 14px;
+
+  img {
+    width: 300px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
 }
