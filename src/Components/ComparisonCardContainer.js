@@ -29,10 +29,10 @@ class ComparisonCardContainer extends React.Component {
 		                          key={index}
 		                           id={index}
 		          updateCardToCompare={this.props.updateCardToCompare}
+		          					className={"card-component highlighted"}
 		        />
 		      }))}
 		      </div>
-
 		      <button onClick={ this.props.clearComparisons }
 		            className="clear-button">clear
 		      </button>
@@ -45,43 +45,28 @@ class ComparisonCardContainer extends React.Component {
 		} else {
 			return (
 	    	<div className="comparison-card-container-component">
-
 	    		<div className="comparison-top">
-
 			      {(this.props.comparisonCards.map((card, index) => {
 			        return <Card location={card.location}
 			                         data={card.data}
 			                          key={index}
 			                           id={index}
 			          updateCardToCompare={this.props.updateCardToCompare}
+			          					className={"card-component highlighted"}
 			        />
 			      }))}
-
 		      </div>
-
-
-
 			      <ComparisonCard loc1={this.props.comparison.loc1}
 			      								avg1={this.props.comparison.avg1}
 			      								loc2={this.props.comparison.loc2}
 			      								avg2={this.props.comparison.avg2}
 			      								compare={this.props.comparison.compare}
 			      />
-
-
-
 		      <button onClick={ this.props.clearComparisons }
 		            className="clear-button">clear
 		      </button>
-
-
-
-
 	      </div>
 	    )
-
-
-
 		}
   }
 }

@@ -65,9 +65,8 @@ class App extends Component {
 	}
 
 	clearComparisons = () => {
-		this.setState({comparisonCards: [], comparison: null})
+		this.setState({data: new DistrictRepository(kinderData).findAllMatches(), comparisonCards: [], comparison: null})
 		document.querySelector('input').value = ''
-		this.searchCards('')
 		this.toggleErrorMessage('off')
 	}
 
@@ -91,13 +90,14 @@ class App extends Component {
 					clearComparisons={this.clearComparisons}
 					resetComparison={this.resetComparison}
 				/>
-			<h4 className="error-message"></h4>
-			<CardContainer currentData={this.state.data}
-				updateCardToCompare={this.updateCardToCompare}
-			/>
-		</div>
-	);
-}
+				<h4 className="error-message"></h4>
+				<CardContainer currentData={this.state.data}
+							 updateCardToCompare={this.updateCardToCompare}
+							     comparisonCards={this.state.comparisonCards}
+				/>
+			</div>
+		);
+	}
 }
 
 export default App;
