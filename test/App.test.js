@@ -20,7 +20,7 @@ describe('App tests', () => {
     ReactDOM.render(<App />, div);
 })
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(renderedApp).toMatchSnapshot();
   })
 
@@ -51,12 +51,18 @@ describe('App tests', () => {
     expect(renderedApp.state('data')).toEqual(newData)
   })
 
-  it.skip('should have a title', () => {
+  it('should have a title', () => {
+    let mountedApp = mount(<App/>)
+    let title = mountedApp.find('h1')
 
+    expect(title.text()).toEqual('HeadCount');
   })
 
-  it.skip('should have instructions', () => {
+  it('should have instructions', () => {
+    let mountedApp = mount(<App/>)
+    let instructions = mountedApp.find('.instructions')
 
+    expect(instructions.text()).toEqual('Please select two districts to compare them')
   })
 
   it('should display number of cards according to search results', () => {
@@ -68,7 +74,7 @@ describe('App tests', () => {
   })
 
   it('App state should change if cards are selected to be compared', () => {
-    
+
 
 
   })

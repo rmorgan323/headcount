@@ -36,6 +36,10 @@ class ComparisonCardContainer extends React.Component {
 		      <button onClick={ this.props.clearComparisons }
 		            className="clear-button">clear
 		      </button>
+					<div className="comparison-center">
+					<h1>HeadCount</h1>
+					<p className="instructions">Please select two districts to compare them</p>
+				</div>
 	      </div>
 	    )
 		} else {

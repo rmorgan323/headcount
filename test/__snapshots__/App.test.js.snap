@@ -25,8 +25,7 @@ ShallowWrapper {
           populateComparisonCard={[Function]}
           resetComparison={[Function]}
           updateCardToCompare={[Function]} />,
-        "}",
-        <h1
+        <h4
           className="error-message" />,
         <CardContainer
           currentData={
@@ -2931,6 +2930,7 @@ ShallowWrapper {
           }
           updateCardToCompare={[Function]} />,
       ],
+      "className": "app-component",
     },
     "ref": null,
     "rendered": Array [
@@ -2961,7 +2961,6 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      "}",
       Object {
         "instance": null,
         "key": undefined,
@@ -2971,7 +2970,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": null,
-        "type": "h1",
+        "type": "h4",
       },
       Object {
         "instance": null,
@@ -5901,8 +5900,7 @@ ShallowWrapper {
             populateComparisonCard={[Function]}
             resetComparison={[Function]}
             updateCardToCompare={[Function]} />,
-          "}",
-          <h1
+          <h4
             className="error-message" />,
           <CardContainer
             currentData={
@@ -8807,6 +8805,7 @@ ShallowWrapper {
             }
             updateCardToCompare={[Function]} />,
         ],
+        "className": "app-component",
       },
       "ref": null,
       "rendered": Array [
@@ -8837,7 +8836,6 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        "}",
         Object {
           "instance": null,
           "key": undefined,
@@ -8847,7 +8845,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": "h1",
+          "type": "h4",
         },
         Object {
           "instance": null,
