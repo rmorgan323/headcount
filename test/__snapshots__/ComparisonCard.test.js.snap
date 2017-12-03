@@ -1,0 +1,413 @@
+exports[`ComparisonCard Tests should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ComparisonCard />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          className="arrow-left"
+          src="assets/arrow-left.svg" />,
+        <div
+          className="compare-top">
+          <h5 />
+          <h4>
+                    average: 
+          </h4>
+</div>,
+        <div>
+          <h3 />
+          <h6>
+                    DIFFERENCE OF AVERAGES
+          </h6>
+</div>,
+        <div
+          className="compare-bottom">
+          <h4>
+                    average: 
+          </h4>
+          <h5 />
+</div>,
+        <img
+          className="arrow-right"
+          src="assets/arrow-right.svg" />,
+      ],
+      "className": "comparison-center",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "arrow-left",
+          "src": "assets/arrow-left.svg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h5 />,
+            <h4>
+              average: 
+</h4>,
+          ],
+          "className": "compare-top",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h5",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "average: ",
+                undefined,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "average: ",
+              undefined,
+            ],
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3 />,
+            <h6>
+              DIFFERENCE OF AVERAGES
+</h6>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "DIFFERENCE OF AVERAGES",
+            },
+            "ref": null,
+            "rendered": "DIFFERENCE OF AVERAGES",
+            "type": "h6",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h4>
+              average: 
+</h4>,
+            <h5 />,
+          ],
+          "className": "compare-bottom",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "average: ",
+                undefined,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "average: ",
+              undefined,
+            ],
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h5",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "arrow-right",
+          "src": "assets/arrow-right.svg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            className="arrow-left"
+            src="assets/arrow-left.svg" />,
+          <div
+            className="compare-top">
+            <h5 />
+            <h4>
+                        average: 
+            </h4>
+</div>,
+          <div>
+            <h3 />
+            <h6>
+                        DIFFERENCE OF AVERAGES
+            </h6>
+</div>,
+          <div
+            className="compare-bottom">
+            <h4>
+                        average: 
+            </h4>
+            <h5 />
+</div>,
+          <img
+            className="arrow-right"
+            src="assets/arrow-right.svg" />,
+        ],
+        "className": "comparison-center",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "arrow-left",
+            "src": "assets/arrow-left.svg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h5 />,
+              <h4>
+                average: 
+</h4>,
+            ],
+            "className": "compare-top",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h5",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "average: ",
+                  undefined,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "average: ",
+                undefined,
+              ],
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3 />,
+              <h6>
+                DIFFERENCE OF AVERAGES
+</h6>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "DIFFERENCE OF AVERAGES",
+              },
+              "ref": null,
+              "rendered": "DIFFERENCE OF AVERAGES",
+              "type": "h6",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4>
+                average: 
+</h4>,
+              <h5 />,
+            ],
+            "className": "compare-bottom",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "average: ",
+                  undefined,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "average: ",
+                undefined,
+              ],
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h5",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "arrow-right",
+            "src": "assets/arrow-right.svg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
