@@ -20,7 +20,7 @@ export default class CardContainer extends Component {
                           key={index}
                            id={index}
           updateCardToCompare={this.props.updateCardToCompare}
-                         card={card}
+                        //  card={card}
                     className={locs.includes(card.location) ? 'card-component highlighted' : 'card-component'}
         />
       }))}

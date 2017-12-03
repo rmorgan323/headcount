@@ -27,7 +27,7 @@ ShallowWrapper {
           
 </div>,
       ],
-      "className": "card-component",
+      "className": undefined,
       "onClick": [Function],
     },
     "ref": null,
@@ -83,7 +83,7 @@ ShallowWrapper {
             
 </div>,
         ],
-        "className": "card-component",
+        "className": undefined,
         "onClick": [Function],
       },
       "ref": null,

@@ -28,6 +28,7 @@ ShallowWrapper {
         <h4
           className="error-message" />,
         <CardContainer
+          comparisonCards={Array []}
           currentData={
                     Array [
                               Object {
@@ -2977,6 +2978,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "comparisonCards": Array [],
           "currentData": Array [
             Object {
               "data": Object {
@@ -5903,6 +5905,7 @@ ShallowWrapper {
           <h4
             className="error-message" />,
           <CardContainer
+            comparisonCards={Array []}
             currentData={
                         Array [
                                     Object {
@@ -8852,6 +8855,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "comparisonCards": Array [],
             "currentData": Array [
               Object {
                 "data": Object {

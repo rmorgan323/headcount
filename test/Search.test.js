@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './../src/Components/Search';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import App from './../src/Components/App';
 
 
 describe('Search Tests', () => {
@@ -16,5 +17,14 @@ describe('Search Tests', () => {
     let input = renderedApp.find('input');
 
     expect(input.length).toEqual(1);
+  })
+
+  it('should update number of cards in the array based on input', () => {
+    let mountedApp = mount(<App/>)
+    let input = mountedApp.find('input');
+
+    expect(mountedApp.state('data').length).toEqual(181)
+    input.simulate('change', {target: {value: 'br'} });
+    expect(mountedApp.state('data').length).toEqual(4)
   })
 })
