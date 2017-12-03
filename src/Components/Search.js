@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import '../css/Search.css';
+import PropTypes from 'prop-types';
 
 export default class Search extends Component {
   constructor() {
-    super()
+    super();
 
     this.searchInput = (event) => {
       let searchString = event.target.value;
-      this.props.search(searchString)
-    }
+
+      this.props.search(searchString);
+    };
   }
 
   render() {
@@ -19,6 +21,10 @@ export default class Search extends Component {
                onChange={this.searchInput}
         />
       </div>
-    )
+    );
   }
 }
+
+Search.propTypes = {
+  search: PropTypes.func
+};

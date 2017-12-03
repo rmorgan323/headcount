@@ -6,8 +6,6 @@ import Adapter from 'enzyme-adapter-react-15';
 import DistrictRepository from './../src/helper';
 import kinderData from './../data/kindergartners_in_full_day_program.js';
 
-
-
 describe('App tests', () => {
   let renderedApp;
 
@@ -82,7 +80,6 @@ describe('App tests', () => {
     expect(mountedApp.state('comparisonCards').length).toEqual(2)
   })
 
-
   it.skip('clear button should clear the comparisonCards array', () => {
     let mountedApp = mount(<App/>)
     let card1 = mountedApp.find('.card-component').at(1)
@@ -98,7 +95,6 @@ describe('App tests', () => {
     clearButton.simulate('click')
     expect(mountedApp.state('comparisonCards')).toEqual([])
   })
-
 
   it('comparison state should be null by default until there are two cards in the comparison card array', () => {
     let mountedApp = mount(<App/>)

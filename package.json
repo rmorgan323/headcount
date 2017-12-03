@@ -5,7 +5,7 @@
   "devDependencies": {
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
-    "babel-eslint": "7.1.1",
+    "babel-eslint": "^7.0.0",
     "babel-jest": "18.0.0",
     "babel-loader": "6.2.10",
     "babel-preset-react-app": "^2.1.0",
@@ -19,7 +19,6 @@
     "dotenv": "2.0.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-15": "^1.0.5",
-    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^3.19.0",
     "eslint-config-react-app": "^0.5.1",
     "eslint-loader": "1.6.0",
@@ -41,6 +40,7 @@
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^0.5.0",
+    "react-scripts": "0.9.0",
     "react-test-renderer": "^15.6.2",
     "recursive-readdir": "2.1.0",
     "sass-loader": "^6.0.6",
@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
+    "prop-types": "^15.6.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2"
   },
@@ -62,7 +63,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/*.js ./src/Components/*.js"
   },
   "jest": {
     "collectCoverageFrom": [

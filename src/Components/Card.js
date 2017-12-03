@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../css/Card.css';
+import PropTypes from 'prop-types';
 
 const Card = ({ location, data, id, updateCardToCompare, className }) => {
   let yearArray = Object.keys(data);
@@ -7,13 +8,13 @@ const Card = ({ location, data, id, updateCardToCompare, className }) => {
     if (Number(data[year]) > .5) {
       return  <p className="change-green" key={`${id}-${index}`}>
                 <span className="info-span">{year}:</span>{data[year]}
-              </p>
+              </p>;
     } else {
       return  <p key={`${id}-${index}`}>
                 <span className="info-span">{year}:</span>{data[year]}
-              </p>
+              </p>;
     }
-  })
+  });
 
   return (
     <div onClick={() => updateCardToCompare(location)}
@@ -24,7 +25,15 @@ const Card = ({ location, data, id, updateCardToCompare, className }) => {
         {mappedYearArray}
       </div>
     </div>
-  )
-}
+  );
+};
+
+Card.propTypes = {
+  className: PropTypes.string,
+  data: PropTypes.object,
+  id: PropTypes.number,
+  location: PropTypes.string,
+  updateCardToCompare: PropTypes.func
+};
 
 export default Card;

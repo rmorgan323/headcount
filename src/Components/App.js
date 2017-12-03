@@ -4,100 +4,103 @@ import kinderData from '../../data/kindergartners_in_full_day_program.js';
 import DistrictRepository from '../helper';
 import CardContainer from './CardContainer';
 import Search from './Search';
-import { findAllMatches, findByName } from '../helper';
-import ComparisonCardContainer from './ComparisonCardContainer'
+import '../helper';
+import ComparisonCardContainer from './ComparisonCardContainer';
 
 class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			data: new DistrictRepository(kinderData).findAllMatches(),
-			comparisonCards: [],
-			comparison: null
-		}
-	}
+  constructor() {
+    super();
+    this.state = {
+      data: new DistrictRepository(kinderData).findAllMatches(),
+      comparisonCards: [],
+      comparison: null
+    };
+  }
 
-	updateCardToCompare = (card) => {
-		const currentComparison = this.state.comparisonCards
-		const newComparison = new DistrictRepository(kinderData).findByName(card)
-		let foundCard = this.state.comparisonCards.find(card => {
-			return card.location === newComparison.location
-		})
+  updateCardToCompare = (card) => {
+    const currentComparison = this.state.comparisonCards;
+    const newComparison = new DistrictRepository(kinderData).findByName(card);
+    let foundCard = this.state.comparisonCards.find(card => {
+      return card.location === newComparison.location;
+    });
 
-		if (foundCard === undefined) {
-			foundCard = {location: ''}
-		}
-		
-		if (foundCard.location === newComparison.location) {
-			const addCard = this.state.comparisonCards.filter(card => {
-				return card.location !== newComparison.location
-			})
-			this.setState({comparisonCards: addCard})
-			this.toggleErrorMessage('off')
+    if (foundCard === undefined) {
+      foundCard = {location: ''};
+    }
+    if (foundCard.location === newComparison.location) {
+      const addCard = this.state.comparisonCards.filter(card => {
+        return card.location !== newComparison.location;
+      });
 
-		} else {
+      this.setState({comparisonCards: addCard});
+      this.toggleErrorMessage('off');
 
-			this.manageComparisonLength(card, currentComparison, newComparison)
-		}
-	}
+    } else {
 
-	toggleErrorMessage(onOff) {
-		let errMes;
-		if (onOff === 'on') {
-			errMes = 'Please clear comparisons first!'
-		} else {
-			errMes = ''
-		}
-		document.querySelector('.error-message').innerText = errMes;
-	}
+      this.manageComparisonLength(card, currentComparison, newComparison);
+    }
+  }
 
-	manageComparisonLength(card, currentComparison, newComparison) {
-		if (this.state.comparisonCards.length === 2) {
-			this.toggleErrorMessage('on')
-		} else {
-			this.setState({comparisonCards: [...currentComparison, newComparison]})
-		}
-	}
+  toggleErrorMessage(onOff) {
+    let errMes;
 
-	searchCards = (string) => {
-		const results = new DistrictRepository(kinderData).findAllMatches(string)
-		this.setState({data: results})
-	}
+    if (onOff === 'on') {
+      errMes = 'Please clear comparisons first!';
+    } else {
+      errMes = '';
+    }
+    document.querySelector('.error-message').innerText = errMes;
+  }
 
-	clearComparisons = () => {
-		this.setState({data: new DistrictRepository(kinderData).findAllMatches(), comparisonCards: [], comparison: null})
-		document.querySelector('input').value = ''
-		this.toggleErrorMessage('off')
-	}
+  manageComparisonLength(card, currentComparison, newComparison) {
+    if (this.state.comparisonCards.length === 2) {
+      this.toggleErrorMessage('on');
+    } else {
+      this.setState({comparisonCards: [...currentComparison, newComparison]});
+    }
+  }
 
-	populateComparisonCard = (loc1, loc2) => {
-		const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2)
-		this.setState({comparison: comparison})
-	}
+  searchCards = (string) => {
+    const results = new DistrictRepository(kinderData).findAllMatches(string);
 
-	resetComparison = () => {
-		this.setState({comparison: null})
-	}
+    this.setState({data: results});
+  }
 
-	render() {
-		return (
-			<div className="app-component">
-				<Search search={this.searchCards} />
-				<ComparisonCardContainer comparisonCards={this.state.comparisonCards}
-					comparison={this.state.comparison}
-					populateComparisonCard={this.populateComparisonCard}
-					updateCardToCompare={this.updateCardToCompare}
-					clearComparisons={this.clearComparisons}
-					resetComparison={this.resetComparison}
-				/>
-				<h4 className="error-message"></h4>
-				<CardContainer currentData={this.state.data}
-							 updateCardToCompare={this.updateCardToCompare}
-							     comparisonCards={this.state.comparisonCards}
-				/>
-			</div>
-		);
-	}
+  clearComparisons = () => {
+    this.setState({data: new DistrictRepository(kinderData).findAllMatches(), comparisonCards: [], comparison: null});
+    document.querySelector('input').value = '';
+    this.toggleErrorMessage('off');
+  }
+
+  populateComparisonCard = (loc1, loc2) => {
+    const comparison = new DistrictRepository(kinderData).compareDistrictAverages(loc1, loc2);
+
+    this.setState({comparison: comparison});
+  }
+
+  resetComparison = () => {
+    this.setState({comparison: null});
+  }
+
+  render() {
+    return (
+      <div className="app-component">
+        <Search search={this.searchCards} />
+        <ComparisonCardContainer comparisonCards={this.state.comparisonCards}
+          comparison={this.state.comparison}
+          populateComparisonCard={this.populateComparisonCard}
+          updateCardToCompare={this.updateCardToCompare}
+          clearComparisons={this.clearComparisons}
+          resetComparison={this.resetComparison}
+        />
+        <h4 className="error-message"></h4>
+        <CardContainer currentData={this.state.data}
+               updateCardToCompare={this.updateCardToCompare}
+                   comparisonCards={this.state.comparisonCards}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
