@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ComparisonCard from './ComparisonCard';
 import Card from './Card.js';
 import '../css/ComparisonCardContainer.css';
