@@ -1,29 +1,37 @@
 input {
-  width: 308px;
-  height: 40px;
-  border-radius: 5px;
-  display: block;
-  margin: 20px auto;
   border: none;
-  font-size: 20px;
+  border-radius: 5px;
   color: #2c89bf;
+  display: block;
+  font-size: 20px;
+  height: 40px;
+  margin: 20px auto;
+  width: 308px;
 }
 
 ::placeholder {
   color: #2c89bf;
-	text-align: center;
 	opacity: .6;
+  text-align: center;
 }
 
 .search-container {
-  background-color: rgba(255,255,255,.3);
-  padding: 1px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.8) 0%,rgba(255,255,255,0.4) 100%); 
   margin: 0px 0 14px;
+  padding: 1px;
 
   img {
-    width: 300px;
-    position: absolute;
     left: 20px;
+    position: absolute;
     top: 15px;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+    .search-container img {
+      display: block;
+      margin: 10px auto 0;
+      position: static;
   }
 }

@@ -11,7 +11,7 @@ const ComparisonCard = ({ loc1, avg1, loc2, avg2, compare }) => {
         <h5>{loc1}</h5>
         <h4>average: {avg1}</h4>
       </div>
-      <div>
+      <div className="avg-diff">
         <h3>{compare}</h3>
         <h6>DIFFERENCE OF AVERAGES</h6>
       </div>

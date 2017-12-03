@@ -1,18 +1,19 @@
 html {
-  /*background-image: url('../../public/assets/school-bg.jpg');*/ }
+  background-image: url("/assets/school-bg.png");
+  background-size: 750px; }
 
 body {
-  /*background: linear-gradient(to right, rgba(82,191,255,1) 0%,rgba(44,137,191,1) 50%,rgba(82,191,255,1) 100%);*/
-  background: linear-gradient(to right, rgba(82, 191, 255, 0.1) 0%, rgba(82, 191, 255, 0.7) 50%, rgba(82, 191, 255, 0.1) 100%);
+  background: linear-gradient(to right, rgba(206, 237, 255, 0.9) 0%, rgba(137, 211, 255, 0.98) 50%, rgba(206, 237, 255, 0.9) 100%);
+  min-height: 100vh;
   padding-bottom: 30px; }
 
 h1, h2, input {
+  color: #2c89bf;
   font-family: 'Magallanes', sans-serif;
   font-weight: bold;
-  text-align: center;
   margin: 0;
   opacity: .8;
-  color: #2c89bf; }
+  text-align: center; }
 
 input {
   opacity: 1; }
@@ -27,10 +28,10 @@ p {
 
 h2 {
   font-size: 20px;
-  margin: 2px;
-  height: 42px; }
+  height: 42px;
+  margin: 2px; }
 
 .app-component h4 {
-  text-align: center;
+  color: #a61608;
   height: 20px;
-  color: #a61608; }
+  text-align: center; }

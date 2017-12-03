@@ -1,37 +1,49 @@
 .comparison-card-container-component {
-  height: 332px;
-  width: 819px;
-  margin: auto;
   display: block;
-  position: relative; }
+  height: 332px;
+  margin: auto;
+  position: relative;
+  width: 819px; }
   .comparison-card-container-component .instructions {
-    font-size: 20px;
-    text-align: center;
     color: #0e5d8c;
     font-family: 'Magallanes', sans-serif;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center; }
 
 .comparison-top {
   display: flex;
   justify-content: space-between; }
 
 .clear-button {
-  width: 154px;
-  margin: auto;
-  display: block;
-  height: 40px;
-  border-radius: 6px;
-  border: none;
-  font-size: 20px;
-  font-weight: 700;
-  font-family: 'Magallanes', sans-serif;
-  padding: 0px;
   background-color: #2c89bf;
+  border: none;
+  border-radius: 6px;
+  bottom: 6px;
   color: #fff;
   cursor: pointer;
-  bottom: 6px;
+  display: block;
+  font-family: 'Magallanes', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  height: 40px;
   left: calc(50% - 77px);
-  position: absolute; }
+  margin: auto;
+  padding: 0px;
+  position: absolute;
+  width: 154px; }
 
 .clear-button:hover {
   background-color: #1c6d9c; }
+
+@media screen and (max-width: 818px) {
+  .comparison-card-container-component {
+    height: initial;
+    width: initial; }
+    .comparison-card-container-component .instructions {
+      margin-top: 11px; }
+  .comparison-top {
+    align-items: center;
+    flex-direction: column; }
+  .clear-button {
+    position: static; } }

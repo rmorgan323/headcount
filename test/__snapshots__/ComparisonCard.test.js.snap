@@ -26,7 +26,8 @@ ShallowWrapper {
                     average: 
           </h4>
 </div>,
-        <div>
+        <div
+          className="avg-diff">
           <h3 />
           <h6>
                     DIFFERENCE OF AVERAGES
@@ -116,6 +117,7 @@ ShallowWrapper {
               DIFFERENCE OF AVERAGES
 </h6>,
           ],
+          "className": "avg-diff",
         },
         "ref": null,
         "rendered": Array [
@@ -222,7 +224,8 @@ ShallowWrapper {
                         average: 
             </h4>
 </div>,
-          <div>
+          <div
+            className="avg-diff">
             <h3 />
             <h6>
                         DIFFERENCE OF AVERAGES
@@ -312,6 +315,7 @@ ShallowWrapper {
                 DIFFERENCE OF AVERAGES
 </h6>,
             ],
+            "className": "avg-diff",
           },
           "ref": null,
           "rendered": Array [
