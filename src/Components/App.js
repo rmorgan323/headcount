@@ -31,7 +31,7 @@ class App extends Component {
 		if (foundCard.location === newComparison.location) {
 			const addCard = this.state.comparisonCards.filter(card => {
 				return card.location !== newComparison.location
-			})
+  		})
 			this.setState({comparisonCards: addCard})
 			this.toggleErrorMessage('off')
 
