@@ -1,4 +1,4 @@
-** Headcount 2.0
+## Headcount 2.0
 
 Headcount 2.0 is a pair project created by Rob Morgan and Jason Hughes for Turing School of Software & Design in less than one week.  It is built in React and tested in Jest/Enzyme.
 
