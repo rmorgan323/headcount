@@ -20,27 +20,27 @@ module.exports = {
     "parser": "babel-eslint",
     "rules": {
         "indent": [
-            "error",
+            "warn",
             2
         ],
         "linebreak-style": [
-            "error",
+            "warn",
             "unix"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "newline-after-var": [
-        "error",
+        "warn",
         "always"
         ],
         "semi": [
-            "error",
+            "warn",
             "always"
         ],
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "warn",
+        "react/jsx-uses-vars": "warn",
     }
 };
 
